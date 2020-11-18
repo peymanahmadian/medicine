@@ -1,0 +1,19 @@
+@import "global";
+.footer{
+  min-height: $footer_height;
+  background-color: $blue_base;
+  padding-top: 12px;
+  .part{
+    text-align: center;
+    color:$white;
+    &>div{
+      padding-top: 2px;
+      padding-bottom: 2px;
+    }
+    .title{
+      padding-bottom: 4px;
+      margin-bottom: 2px;
+      border-bottom: 1px solid $light_gray;
+    }
+  }
+}
