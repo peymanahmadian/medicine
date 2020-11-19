@@ -6,7 +6,64 @@ $blue_base:#1890ff;
 $header_height:65px;
 $footer_height:128px;
 $white:white;
+// Extra small devices (portrait phone.s, less than 576px)
+@mixin xs(){
+  @media (max-width: 575.98px) {
+    @content;
+  }
+}
+@mixin sm(){
+  // Small devices (landscape phones, 576px and up)
+  @media (min-width: 576px) and (max-width: 767.98px) {
+    @content;
+  }
+}
+@mixin md(){
+  // Medium devices (tablets, 768px and up)
+  @media (min-width: 768px) and (max-width: 991.98px) {
+    @content;
+  }
+}
+@mixin lg(){
+  // Large devices (desktops, 992px and up)
+  @media (min-width: 992px) and (max-width: 1199.98px) {
+    @content;
+  }
+}
+@mixin xl(){
+  // Extra large devices (large desktops, 1200px and up)
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+//overload style ant
 
+.ant-layout-header{
+  background-color: $white;
+  min-height: $header_height;
+  @include xs(){
+    padding:0 15px;
+  }
+  @include sm(){
+    padding: 0 15px;
+  }
+  @include md(){
+    padding: 0 15px;
+  }
+}
+.ant-layout-footer{
+  background-color: $blue_base;
+  @include xs(){
+    padding:0 15px;
+  }
+  @include sm(){
+    padding: 0 15px;
+  }
+  @include md(){
+    padding: 0 15px;
+  }
+}
+//
 body *{
   font-family: $normal_font;
 }

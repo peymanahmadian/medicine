@@ -1,4 +1,5 @@
 import Err from "../../assets/images/error.svg";
+import {Col, Row} from "antd";
 const style={
     container:{
         display:"flex",
@@ -6,22 +7,24 @@ const style={
     },
     errorImg:{
         img:{
-            height:"450px"
+            height:"60vh",
+            width:"80%",
+            maxHeight:"350px"
         },
         textAlign:"center"
     }
 };
 const Error=(props)=>{
     return(
-        <section style={style.container}>
-            <div style={style.errorImg}>
-            <img style={style.errorImg.img}  src={Err} alt={"صفحه خطا"} title={"صفحه خطا"}/>
-            <h1>خطا در برنامه</h1>
-            <p>مشکلی در برنامه ایجاد شده لطفا صفحه را رفرش کنید یا با پشتیبانی تماس بکیرید</p>
-            </div>
+        <Row>
+            <Col xs={24} style={style.errorImg}>
+                <img style={style.errorImg.img}  src={Err} alt={"صفحه خطا"} title={"صفحه خطا"}/>
+                <h1>خطا در برنامه</h1>
+                <p>مشکلی در برنامه ایجاد شده لطفا صفحه را رفرش کنید یا با پشتیبانی تماس بکیرید</p>
+            </Col>
 
 
-        </section>
+        </Row>
     )
 }
 export default Error;

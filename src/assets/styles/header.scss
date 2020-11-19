@@ -1,31 +1,29 @@
 @import "global";
 .menuTop{
   ul{
+    background-color: transparent;
     border-bottom: 0 !important;
     text-align: right !important;
-    li{
-      padding-top: 10px !important;
-      padding-bottom: 6px !important;
-    }
   }
 
 }
 .header{
+  background: transparent;
   min-height: $header_height;
 }
 .accountButton{
-   display: flex;
-   align-items: center;
-   justify-content: flex-end;
-  padding-top: 8px;
-  img{
-    transition: all 0.2s;
-    cursor: pointer;
-    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-top: 8px;
+    img{
+      transition: all 0.2s;
+      cursor: pointer;
+      border-radius: 50%;
 
-    &:hover{
-      //background-color: $light_gray;
-      padding: 5px;
+      &:hover{
+        //background-color: $light_gray;
+        padding: 5px;
+      }
     }
-  }
  }

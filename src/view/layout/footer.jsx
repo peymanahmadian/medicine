@@ -1,8 +1,9 @@
-import {Row,Col} from "antd";
+import {Row, Col, Layout} from "antd";
 import "../../assets/styles/footer.scss";
 const Footer=(props)=>{
     return(
-        <Row justify="center" className={"footer"}>
+        <Layout.Footer className={"footer"}>
+        <Row justify="center" >
             <Col lg={{span:6,offset:1}} md={{span:6,offset:1}} xs={24} className={"part"}>
                 <div className={"title"}>پشتیبانی و راهنمایی</div>
                 <div>شماره تلفن تماس</div>
@@ -19,6 +20,7 @@ const Footer=(props)=>{
                 <div>ایمیل</div>
             </Col>
         </Row>
+        </Layout.Footer>
     )
 }
 export default Footer;
