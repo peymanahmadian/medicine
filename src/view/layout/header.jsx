@@ -12,9 +12,9 @@ const Header=(props)=>{
                 </Col>
                 <Col xs={0} lg={{span:8,offset:8}}  className={"menuTop"}>
                     <Menu mode="horizontal">
-                        <Menu.Item>حساب کاربری</Menu.Item>
-                        <Menu.Item>افزایش اعتبار</Menu.Item>
-                        <Menu.Item>پشتیبانی</Menu.Item>
+                        <Menu.Item className={"xs_hidden sm_hidden md_hidden"}>حساب کاربری</Menu.Item>
+                        <Menu.Item className={"xs_hidden sm_hidden md_hidden"}>افزایش اعتبار</Menu.Item>
+                        <Menu.Item className={"xs_hidden sm_hidden md_hidden"}>پشتیبانی</Menu.Item>
                     </Menu>
                 </Col>
                 <Col xs={8} lg={2}>

@@ -3,7 +3,8 @@ import {useState} from "react";
 import {Provider} from "react-redux";
 import {createStore,applyMiddleware} from "redux";
 import {composeWithDevTools} from 'redux-devtools-extension';
-import {Drawer,Col,Row,Layout} from "antd"
+import {Link} from "react-router-dom";
+import {Drawer,Layout,Menu} from "antd"
 //imports saga
 import * as sagas from "../saga";
 //reducers
@@ -11,7 +12,6 @@ import combineReducers from "../reducers/combineReducers";
 //redux-saga
 import createSagaMiddleware from "redux-saga";
 import ErrorBoundary from "./error/errorBoundray";
-import Error from "./error/error";
 
 //import component
 import Header from "./layout/header";
@@ -43,9 +43,14 @@ const App=()=> {
                     onClose={()=>setVisible(false)}
                     visible={visible}
                 >
-                    <p>Some contents...</p>
-                    <p>Some contents...</p>
-                    <p>Some contents...</p>
+                    <Menu onClick={()=>setVisible(false)}>
+                        <Menu.Item className={"xl_hidden lg_hidden"}><Link to={"/account"}>حساب کاربری</Link></Menu.Item>
+                        <Menu.Item className={"xl_hidden lg_hidden"} ><Link to={"/charge"}>افزایش اعتبار</Link></Menu.Item>
+                        <Menu.Item className={"xl_hidden lg_hidden"}><Link to={"/support"}>پشتیبانی</Link></Menu.Item>
+                    </Menu>
+
+
+
                 </Drawer>
                 <Header onPress={()=>setVisible(true)}/>
                 <Content/>
