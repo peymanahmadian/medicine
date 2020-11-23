@@ -10,7 +10,7 @@ const Header=(props)=>{
                 <Col xs={16} lg={4}>
                     <img height={"64"} src={LogoImg} alt={"نرم افزار دارویی"} title={"نرم افزار دارویی"}/> <span className={"blueText"}>نرم افزار پزشکی</span>
                 </Col>
-                <Col xs={0} lg={{span:8,offset:8}}  className={"menuTop"}>
+                <Col xs={0} lg={16}  className={"menuTop"}>
                     <Menu mode="horizontal">
                         <Menu.Item className={"xs_hidden sm_hidden md_hidden"}>حساب کاربری</Menu.Item>
                         <Menu.Item className={"xs_hidden sm_hidden md_hidden"}>افزایش اعتبار</Menu.Item>
