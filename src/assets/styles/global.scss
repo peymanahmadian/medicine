@@ -3,9 +3,11 @@
 $normal_font:"shabnam-medium";
 $light_gray:#e6e6e6;
 $blue_base:#1890ff;
-$header_height:65px;
+$black:#524646;
+$header_height:305px;
 $footer_height:128px;
 $white:white;
+
 // Extra small devices (portrait phone.s, less than 576px)
 @mixin xs(){
   @media (max-width: 575px) {
@@ -41,18 +43,6 @@ $white:white;
 .ant-layout-header{
   background-color: $white;
   min-height: $header_height;
-  @include xs(){
-    padding:0 15px;
-  }
-  @include sm(){
-    padding: 0 15px;
-  }
-  @include md(){
-    padding: 0 15px;
-  }
-  @include lg(){
-    padding:0 15px;
-  }
 }
 .ant-layout-footer{
   background-color: $blue_base;

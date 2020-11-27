@@ -10,6 +10,26 @@
 .header{
   background: transparent;
   min-height: $header_height;
+  padding: 0;
+}
+.header_search{
+  min-height: 240px;
+  background-color: #d0f0ff;
+  background-image: url("../images/backgroundImg.svg");
+  background-repeat: no-repeat;
+  background-position: 8px;
+  background-size: 200px auto;
+  @include xs(){
+    background-image: none;
+  }
+}
+.title{
+  font-size: 24px;
+  padding-bottom: 12px;
+  text-align: center;
+  b{
+    color:$blue_base;
+  }
 }
 .accountButton{
     display: flex;
