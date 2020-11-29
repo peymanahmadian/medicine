@@ -1,4 +1,14 @@
 @import "global";
+@mixin showMobile(){
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background-position: center 42px;
+}
 .menuTop{
   ul{
     background-color: transparent;
@@ -9,21 +19,55 @@
 }
 .header{
   background: transparent;
-  min-height: $header_height;
   padding: 0;
-}
-.header_search{
-  min-height: 240px;
-  background-color: #d0f0ff;
-  background-image: url("../images/backgroundImg.svg");
-  background-repeat: no-repeat;
-  background-position: 8px;
-  background-size: 200px auto;
-  @include xs(){
-    background-image: none;
+  .left_btn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .icon_btn{
+    line-height: 34px;
+    visibility: hidden;
+    margin-top: 8px;
+    @include xs(){
+      visibility: visible;
+    }
+    @include sm(){
+      visibility: visible;
+    }
+  }
+  .header_search{
+    min-height: 240px;
+    background-color: #d0f0ff;
+    background-image: url("../images/backgroundImg.svg");
+    background-repeat: no-repeat;
+    background-position: 8px;
+    background-size: 200px auto;
+    &.show{
+      @include xs(){
+        @include showMobile()
+      }
+      @include sm(){
+        @include showMobile()
+      }
+    }
+    @include xs(){
+      display: none;
+
+    }
+    @include sm(){
+      display: none;
+    }
   }
 }
+
 .title{
+  @include sm(){
+    visibility: hidden;
+  }
+  @include xs(){
+    visibility: hidden;
+  }
   font-size: 24px;
   padding-bottom: 12px;
   text-align: center;
