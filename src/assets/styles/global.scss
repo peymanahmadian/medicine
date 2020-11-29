@@ -1,10 +1,12 @@
 @import "../fonts/fonts";
+@import "animate";
 //var
 $normal_font:"shabnam-medium";
 $light_gray:#e6e6e6;
 $blue_base:#1890ff;
 $black:#524646;
 $header_height:305px;
+$header_height_mobile:64px;
 $footer_height:128px;
 $white:white;
 
@@ -43,6 +45,15 @@ $white:white;
 .ant-layout-header{
   background-color: $white;
   min-height: $header_height;
+  padding: 0;
+  @include xs(){
+    padding: 0 12px;
+    min-height: $header_height_mobile;
+  }
+  @include sm(){
+    padding: 0 12px;
+    min-height: $header_height_mobile;
+  }
 }
 .ant-layout-footer{
   background-color: $blue_base;
@@ -97,4 +108,7 @@ body *{
 }
 .content{
   min-height:calc(100vh - (#{$header_height} + #{$footer_height}));
+}
+.centerText{
+  text-align: center;
 }
