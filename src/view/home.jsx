@@ -4,6 +4,7 @@ import {Card} from "./component";
 import "../assets/styles/home.scss";
 //photos
 import phy from "../assets/images/menu/psychology.svg";
+import covid from "../assets/images/menu/covidTest.svg";
 const Home=(props)=>{
     return(
         <div className={"home"}>
@@ -15,7 +16,7 @@ const Home=(props)=>{
                             <Card url={phy} link={"/psychology"} title={"مشاوره و روانشناسی"}/>
                         </Col>
                         <Col xs={24} sm={12} md={6} lg={6}>
-                            <Card url={phy} />
+                            <Card url={covid} link={"/covidTest"} title={"تست کرونا در منزل"} />
                         </Col>
                         <Col xs={24} sm={12} md={6} lg={6}>
                             <Card url={phy} />
@@ -24,35 +25,6 @@ const Home=(props)=>{
                             <Card url={phy} />
                         </Col>
                     </Row>
-                    <Row justify={"center"}>
-                        <Col xs={24} sm={12} md={6} lg={6}>
-                            <Card url={phy} />
-                        </Col>
-                        <Col xs={24} sm={12} md={6} lg={6}>
-                            <Card url={phy} />
-                        </Col>
-                        <Col xs={24} sm={12} md={6} lg={6}>
-                            <Card url={phy} />
-                        </Col>
-                        <Col xs={24} sm={12} md={6} lg={6}>
-                            <Card url={phy} />
-                        </Col>
-                    </Row>
-                    <Row justify={"center"}>
-                        <Col xs={24} sm={12} md={6} lg={6}>
-                            <Card url={phy} />
-                        </Col>
-                        <Col xs={24} sm={12} md={6} lg={6}>
-                            <Card url={phy} />
-                        </Col>
-                        <Col xs={24} sm={12} md={6} lg={6}>
-                            <Card url={phy} />
-                        </Col>
-                        <Col xs={24} sm={12} md={6} lg={6}>
-                            <Card url={phy} />
-                        </Col>
-                    </Row>
-
                 </Col>
             </Row>
         </div>
