@@ -7,7 +7,7 @@ import {MainPsychology} from "./../page";
 //
 const Context=(props)=>{
     return(
-        <Layout.Content className={"content"}>
+        <Layout.Content className={"padding_vertical"}>
             <Switch>
                 <Route path={"/"} exact={true} component={Home}/>
                 <Route path={"/psychology"} exact={true} component={MainPsychology}/>
