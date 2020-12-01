@@ -3,14 +3,16 @@ import {Switch,Route} from "react-router-dom";
 import Error from "../error/error";
 //import component
 import Home from "../home";
-import {MainPsychology} from "./../page";
+import {MainPsychology,DoctorFind} from "./../page";
+
 //
 const Context=(props)=>{
     return(
-        <Layout.Content className={"padding_vertical"}>
+        <Layout.Content className={"padding_vertical content"}>
             <Switch>
                 <Route path={"/"} exact={true} component={Home}/>
                 <Route path={"/psychology"} exact={true} component={MainPsychology}/>
+                <Route path={"/psychology/:subject"} exact={true} component={DoctorFind}/>
                 <Route component={Error}/>
             </Switch>
         </Layout.Content>

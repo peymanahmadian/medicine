@@ -9,7 +9,7 @@ const Main=(props)=>{
             <Col xs={24} sm={24} md={18} className={"menu"}>
                 <Row justify={"center"}>
                     <Col xs={24} sm={12} md={6} lg={6}>
-                        <Card url={phy}  title={"اضطراب ، افسردگی و مسائل فردی"}/>
+                        <Card url={phy} link={"/psychology/personal"}  title={"اضطراب ، افسردگی و مسائل فردی"}/>
                     </Col>
                     <Col xs={24} sm={12} md={6} lg={6}>
                         <Card url={phy} title={"مشاوره جنسی"}/>
