@@ -1,5 +1,8 @@
+import {useEffect} from "react";
 import {Layout} from "antd";
 import {Switch,Route} from "react-router-dom";
+import {useDispatch} from "react-redux";
+import {authentication} from "../../actions/userAction";
 import Error from "../error/error";
 //import component
 import Home from "../home";
@@ -7,6 +10,10 @@ import {MainPsychology,DoctorFind} from "./../page";
 
 //
 const Context=(props)=>{
+    const dispatch=useDispatch();
+    useEffect(()=>{
+        dispatch(authentication({UserName:"system",Password:"system@2000"}))
+    },[0])
     return(
         <Layout.Content className={"padding_vertical content"}>
             <Switch>
