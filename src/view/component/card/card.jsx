@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 import "./card.scss";
 const Card=(props)=>{
     return(
-        <Link to={props.link} class={"card"}>
+        <Link to={props.link} className={"card"}>
             <div className={"item"}>
             <div className={"background"} style={{backgroundImage:`url(${props.url})`}} />
             <div className={"text"}>
