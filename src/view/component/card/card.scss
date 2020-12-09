@@ -30,7 +30,11 @@
       border-radius: 0;
     }
     &:hover{
+      box-shadow: 0 0 6px #4e4e4e;
 
+    }
+    &:hover .background{
+      background-size: 65%;
 
     }
     .background{
@@ -39,34 +43,34 @@
       background-repeat: no-repeat;
       transition: all 0.2s ease-in;
       background-position: center;
-      background-size: cover;
+      background-size: 55%;
       @include xs(){
         width: 50%;
-        background-size:cover;
-        background-position: right;
+        background-size:65%;
+        background-position: center;
         border-radius: 0;
       }
       @include sm(){
         width: 50%;
-        background-size:cover;
+        background-size:65%;
         border-radius: 0;
-        background-position: right;
+        background-position: center;
       }
     }
     .text{
       height: 50px;
       padding: 4px 6px;
       color:$black;
+      text-align: center;
+
       @include sm(){
         width: 50%;
         font-weight: 600;
-        text-align: center;
         padding-top: 64px;
       }
       @include xs(){
         width: 50%;
         font-weight: 600;
-        text-align: center;
         padding-top: 64px;
       }
     }
