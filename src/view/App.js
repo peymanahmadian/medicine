@@ -1,7 +1,7 @@
 //libs
 import {useState} from "react";
-import {Provider} from "react-redux";
 import {createStore,applyMiddleware} from "redux";
+import {Provider} from "react-redux";
 import {composeWithDevTools} from 'redux-devtools-extension';
 import {Link} from "react-router-dom";
 import {Drawer,Layout,Menu} from "antd"
@@ -12,7 +12,6 @@ import combineReducers from "../reducers/combineReducers";
 //redux-saga
 import createSagaMiddleware from "redux-saga";
 import ErrorBoundary from "./error/errorBoundray";
-
 //import component
 import Header from "./layout/header";
 import Footer from "./layout/footer";
@@ -32,7 +31,7 @@ bindSaga(sageMiddleware);
 //APP
 const App=()=> {
     const [visible,setVisible]=useState(false);
-  return (
+    return (
     <Provider store={store}>
         <ErrorBoundary>
             <Layout>
@@ -63,7 +62,7 @@ const App=()=> {
         </ErrorBoundary>
     </Provider>
 
-  );
+    );
 }
 
 export default App;

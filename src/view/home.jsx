@@ -1,11 +1,19 @@
-import React from "react";
+import React,{useEffect} from "react";
+import {useSelector} from "react-redux";
 import {Row,Col} from "antd";
 import {Card} from "./component";
 import "../assets/styles/home.scss";
 //photos
 import phy from "../assets/images/menu/psychology.svg";
 import covid from "../assets/images/menu/covidTest.svg";
-const Home=(props)=>{
+//actions
+const Home=()=>{
+    const UserID=useSelector(state=>state.AccountReducer.UserId);
+    useEffect(()=>{
+        debugger;
+        if(UserID){
+        }
+    },[UserID]);
     return(
         <div className={"home"}>
 
