@@ -1,1 +1,1 @@
-export {authentication} from "./accountSaga";
+export {authentication,getUser} from "./accountSaga";
