@@ -1,2 +1,2 @@
-export * from "./psychology";
+export * from "./subService";
 export * from "./doctorFind";

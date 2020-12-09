@@ -3,9 +3,9 @@ import HttpHeader from "../command/httpHeader";
 //models
 import {Visual as VisualURL} from "../models/urls";
 class VisualService{
-    async getMainMenu(param){
+    async getMainMenu(){
         try{
-            return await axios.post(VisualURL.GetMainMenu,param,HttpHeader(true));
+            return await axios.post(VisualURL.GetMainMenu,HttpHeader(true));
         }catch (e) {
             return e;
         }

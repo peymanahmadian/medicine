@@ -6,7 +6,7 @@ import {getUser} from "../../actions/userAction";
 import Error from "../error/error";
 //import component
 import Home from "../home";
-import {MainPsychology,DoctorFind} from "./../page";
+import {SubService} from "./../page";
 
 //
 const Context=(props)=>{
@@ -19,8 +19,7 @@ const Context=(props)=>{
         <Layout.Content className={"padding_vertical content"}>
             <Switch>
                 <Route path={"/"} exact={true} component={Home}/>
-                <Route path={"/psychology"} exact={true} component={MainPsychology}/>
-                <Route path={"/psychology/:subject"} exact={true} component={DoctorFind}/>
+                <Route path={"/service/:id"} exact={true} component={SubService}/>
                 <Route component={Error}/>
             </Switch>
         </Layout.Content>
