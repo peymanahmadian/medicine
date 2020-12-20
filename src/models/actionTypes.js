@@ -4,4 +4,8 @@ export const UserActionType={
     SetUser:"SetUser"
 }
 export const VisualActionType={
+    toggleLoading:"toggleLoading"
+}
+export const DoctorActionType={
+    SetInformation:"SetInformation"
 }
