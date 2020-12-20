@@ -3,7 +3,7 @@ import LocalStorage from "../command/localStorage";
 //import Actions type
 import {UserActionType} from "./../models/actionTypes";
 //import Actions
-import {authentication as authenticationAction,setUser} from "./../actions/userAction";
+import {setUser} from "./../actions/userAction";
 //import Services
 import UserService from "../services/userService";
 //flow function
@@ -13,27 +13,21 @@ function* authenticationFN(action){
     if(!result.isAxiosError && result.status===200){
         LocalStorage.setValue(tokenName,result.data.TokenKey);
     }else{
-        debugger;
         //@todo create show alert
     }
 
 }
 function* getUserFN(action){
-    debugger;
     let tokenStatus=LocalStorage.getValue(tokenName);
     if(tokenStatus){
         const result=yield call(UserService.getUser,action.param);
         if(!result.isAxiosError && result.status===200){
             //@todo call set user action
-
-            debugger;
             yield put(setUser(result.data))
         }else{
-            debugger;
             //@todo handle login failed
         }
     }else{
-        debugger;
         //@todo handle login failed
     }
 

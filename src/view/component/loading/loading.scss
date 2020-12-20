@@ -1,0 +1,23 @@
+.loading{
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(26,65,102,0.6);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .focus{
+    text-align: center;
+
+    .subtitle{
+      font-size: 18px;
+      padding-top: 20px;
+      color:white;
+    }
+    img{
+      height: 120px;
+    }
+  }
+
+}

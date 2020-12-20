@@ -1,36 +1,17 @@
-import React,{useEffect} from "react";
-import {useSelector} from "react-redux";
+import React from "react";
 import {Row,Col} from "antd";
-import {Card} from "./component";
 import "../assets/styles/home.scss";
+import {Service} from "../models/const";
 //photos
-import phy from "../assets/images/menu/psychology.svg";
-import covid from "../assets/images/menu/covidTest.svg";
 import ServiceMenu from "./component/serviceMenu/serviceMenu";
 //actions
 const Home=()=>{
-    const UserID=useSelector(state=>state.AccountReducer.UserId);
-    useEffect(()=>{
-        debugger;
-        if(UserID){
-        }
-    },[UserID]);
     return(
         <div className={"home"}>
-
             <Row justify={"center"}>
                 <Col xs={24} sm={24} md={18} className={"menu"}>
                     <Row justify={"center"}>
-                        <ServiceMenu/>
-                        {/*<Col xs={24} sm={12} md={6} lg={6}>*/}
-                        {/*    <Card url={covid} link={"/covidTest"} title={"تست کرونا در منزل"} />*/}
-                        {/*</Col>*/}
-                        {/*<Col xs={24} sm={12} md={6} lg={6}>*/}
-                        {/*    <Card url={phy} />*/}
-                        {/*</Col>*/}
-                        {/*<Col xs={24} sm={12} md={6} lg={6}>*/}
-                        {/*    <Card url={phy} />*/}
-                        {/*</Col>*/}
+                        <ServiceMenu type={Service.GetMasterServiceGroup} />
                     </Row>
                 </Col>
             </Row>

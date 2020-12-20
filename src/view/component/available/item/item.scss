@@ -1,0 +1,36 @@
+@import "../../../../assets/styles/global";
+.item{
+  padding: 6px;
+  margin: 4px;
+  border: 1px solid $light_gray;
+  background-color: white;
+  box-shadow: 0 0 4px #bcb7b7;
+  border-radius: 4px;
+
+  .infoItem{
+    display: flex;
+    .background{
+      min-width: 110px;
+      height: 110px;
+      background-size: 100%;
+      border-radius: 50%;
+      border: 2px solid $blue_base;
+    }
+    .basicInfo{
+      padding: 2px 18px;
+      .fullNameInfo{
+
+      }
+      .titleInfo{
+
+      }
+    }
+  }
+  .priceInfo{
+    .btn{
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 2px;
+    }
+  }
+}

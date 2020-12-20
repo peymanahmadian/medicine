@@ -1,25 +1,21 @@
-import {useEffect} from "react";
 import {Layout} from "antd";
 import {Switch,Route} from "react-router-dom";
-import {useDispatch} from "react-redux";
-import {getUser} from "../../actions/userAction";
 import Error from "../error/error";
 //import component
 import Home from "../home";
-import {SubService} from "./../page";
+import {SubService,DoctorFind,SubServiceList,DoctorDetails} from "./../page";
 
 //
-const Context=(props)=>{
-    const dispatch=useDispatch();
-    useEffect(()=>{
-        debugger;
-        dispatch(getUser({UserName:"system",Password:"system@2000"}))
-    })
+const Context=()=>{
     return(
         <Layout.Content className={"padding_vertical content"}>
             <Switch>
-                <Route path={"/"} exact={true} component={Home}/>
-                <Route path={"/service/:id"} exact={true} component={SubService}/>
+                <Route path={"/"} exact={true} component={Home} />
+                <Route path={"/service/reserve"} exact={true} component={DoctorDetails} />
+                <Route path={"/service/:id"} exact={true} component={SubService} />
+                <Route path={"/service/search/:id"} exact={true} component={DoctorFind} />
+                <Route path={"/service/sub/:id"} exact={true} component={SubServiceList} />
+
                 <Route component={Error}/>
             </Switch>
         </Layout.Content>

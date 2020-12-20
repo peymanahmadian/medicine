@@ -4,6 +4,8 @@ export const User={
     GetUser:`${ServerUrl}/User/GetUser`
 }
 export const Visual={
-    GetMainMenu:`${ServerUrl}/Medicine/GetMasterServiceGroup`,
-    GetSubMainMenu:`${ServerUrl}/Medicine/GetMasterService`
+    GetMasterServiceGroup:`${ServerUrl}/Medicine/GetMasterServiceGroup`,
+    GetMasterService:`${ServerUrl}/Medicine/GetMasterService`,
+    GetMasterServiceItem:`${ServerUrl}/Medicine/GetMasterServiceItem`,
+    GetPractitioner:`${ServerUrl}/Medicine/GetPractitioner`
 }

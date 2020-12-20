@@ -7,20 +7,15 @@ import {setMainItems} from "./../actions/visualAction";
 import VisualService from "../services/visualService";
 //flow function
 function* getMainItemsFN(){
-    debugger;
     const result=yield call(VisualService.getMainMenu);
     if(!result.isAxiosError && result.status===200){
-        debugger;
         let dataCash=[];
         result.data.forEach(item=>{
             let cash={name:item.MasterServiceGroupName,image:`url('data:image/jpeg;base64,${item.Pic}')`};
             dataCash.push(cash);
         });
         yield put(setMainItems(dataCash));
-
-        debugger;
     }else{
-        debugger;
         //@todo create show alert
     }
 
