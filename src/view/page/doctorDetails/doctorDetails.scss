@@ -8,11 +8,18 @@
     padding: 8px;
     border-radius: 8px;
     margin-bottom: 14px;
+    @include sm(){
+      border-radius: 0;
+    }
+    @include xs(){
+      border-radius: 0;
+    }
     .background{
       width: 200px;
       height: 200px;
       background-size: 100%;
       border-radius: 50%;
+
       border: 2px solid $blue_base;
     }
     .name{
@@ -32,6 +39,12 @@
     padding: 12px;
     border: 1px solid #7fc3f0;
     border-radius: 8px;
+    @include sm(){
+      border-radius: 0;
+    }
+    @include xs(){
+      border-radius: 0;
+    }
     padding-bottom: 32px;
     margin-bottom: 8px;
     .head{
@@ -72,6 +85,7 @@
   .week{
     display: flex;
     justify-content: space-between;
+    flex-flow: wrap;
     .day{
       margin-top: 6px;
       max-width: 140px;

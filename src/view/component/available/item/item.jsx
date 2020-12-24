@@ -27,9 +27,7 @@ const Item=(props)=>{
                 </Col>
                 <Col xs={24} sm={24} md={8} className={"priceInfo"}>
                     <div>
-                        <Button className={"btn"} type="primary" shape="round" size={"large"} block onClick={()=>setInfo(model)}>
-                                دریافت مشاوره
-                        </Button>
+                        <Button type="primary" shape="round" size={"medium"} block onClick={()=>setInfo(model)}>دریافت مشاوره</Button>
                     </div>
 
 

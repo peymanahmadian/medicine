@@ -4,7 +4,7 @@
   margin: 4px;
   border: 1px solid $light_gray;
   background-color: white;
-  box-shadow: 0 0 4px #bcb7b7;
+  box-shadow: 0 0 2px #d5dce1;
   border-radius: 4px;
 
   .infoItem{
@@ -27,10 +27,8 @@
     }
   }
   .priceInfo{
-    .btn{
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 2px;
+    div{
+      margin-top: 75px;
     }
   }
 }
