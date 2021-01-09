@@ -1,11 +1,42 @@
 @import "global";
 .footer{
   min-height: $footer_height;
-  background-color: $blue_base;
-  padding-top: 12px;
+  padding:0;
+  margin-top: 20px;
+  @include sm_down(){
+    margin-top: 0;
+  }
+  .innerFooter{
+    max-width: $max_width;
+    height: $footer_height;
+    margin: 0 auto;
+    .partItem{
+      display: flex;
+
+      .text{
+        padding: 8px;
+      }
+      .iconBase{
+        background-color: white;
+        padding-top: 5px;
+        border-radius: 50%;
+        font-size: 20px;
+        height: 40px;
+        width: 40px;
+        border: 3px solid #0089ff;
+      }
+    }
+
+  }
   .part{
+    @include sm_down(){
+      display: block;
+    }
+    display: flex;
     text-align: center;
+    justify-content: space-between;
     color:$white;
+    padding: 4px 6px;
     &>div{
       padding-top: 2px;
       padding-bottom: 2px;
@@ -14,6 +45,21 @@
       padding-bottom: 4px;
       margin-bottom: 2px;
       border-bottom: 1px solid $light_gray;
+    }
+    .img{
+      height: 85px;
+      width: 85px;
+      background-color: #153c63;
+      border-radius: 50%;
+      @include sm_down(){
+        margin: 50px auto 0 ;
+        height: 45px;
+        width: 45px;
+        img{
+
+          height: 35px;
+        }
+      }
     }
   }
 }

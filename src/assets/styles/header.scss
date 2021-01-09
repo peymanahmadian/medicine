@@ -5,11 +5,12 @@
   position: fixed;
   z-index: 999;
   top: 0;
-  left: 0;
+  right: 0;
   height: 100vh;
   width: 100vw;
   background-position: center 90%;
   align-items: flex-start;
+  background-color: $blue_base;
 }
 .menuTop{
   ul{
@@ -20,8 +21,41 @@
 
 }
 .header{
+  margin-top: 15px;
+  max-width: $max_width;
+  width: 100%;
   background: transparent;
+  margin-left: auto;
+  margin-right: auto;
   padding: 0;
+  border-radius: 8px;
+  box-shadow: 0 0 4px #43a7b6f5;
+  position: relative;
+  overflow:hidden ;
+  @include sm_down(){
+    margin: 0;
+    border-radius: 0;
+    .greenCircle,.greenRect{
+      display: none;
+    }
+  }
+  .greenRect{
+    position: absolute;
+    width: 50%;
+    height: 57%;
+    background-color: rgba(67, 172, 139, 0.4);
+    border-radius: 0 0 0 210px;
+    right: 0;
+  }
+  .greenCircle{
+    position: absolute;
+    width: 385px;
+    height: 385px;
+    background-color: #35d0c3;
+    border-radius: 50%;
+    left: -177px;
+    bottom: -50%;
+  }
   .left_btn{
     display: flex;
     justify-content: space-between;
@@ -39,12 +73,33 @@
     }
   }
   .header_search{
-    min-height: 240px;
-    background-color: #d0f0ff;
-    background-image: url("../images/backgroundImg.svg");
-    background-repeat: no-repeat;
-    background-position: 8px;
-    background-size: 200px auto;
+    position: absolute;
+    right: 80px;
+    min-width: 450px;
+    top: 200px;
+    .buttonSearch{
+      position: relative;
+      .text{
+        border-radius: 22px;
+        height: 42px;
+        padding: 0 10px;
+        color: $black;
+      }
+      .button{
+        position: absolute;
+        top: 14px;
+        left: 3px;
+        border-radius: 24px;
+        height: 36.5px;
+        min-width: 95px;
+        background-color: $blue_base;
+        border: 0;
+        transition: all 0.2s;
+        &:hover{
+          opacity: 0.8;
+        }
+      }
+    }
     &.show{
       @include xs(){
         @include showMobile()
@@ -60,6 +115,52 @@
     @include sm(){
       display: none;
     }
+    @include sm_down(){
+      .buttonSearch .text{
+        margin-top: 4px;
+        border-radius:0;
+        padding: 30px;
+      }
+      .buttonSearch .button{
+        top: 64px;
+        border-radius: 0;
+        background-color: #084b5d;
+        padding: 0;
+        width: 100vw;
+        right: 0;
+        margin: 0;
+        border: 0;
+        min-height: 55px;
+
+      }
+      .search_box{
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100vw;
+        height: 100vh;
+        .close_btn{
+
+          border-radius: 0;
+          width: 100vw;
+          right: 0;
+          position: absolute;
+          bottom: 0;
+        }
+      }
+    }
+    .close_btn{
+      @include md_above(){
+        display: none;
+      }
+    }
+  }
+  .doctorImage{
+    position: absolute;
+    height: 340px;
+    left:90px;
+    top: 50px;
+
   }
 }
 

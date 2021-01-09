@@ -2,7 +2,8 @@
 import {createStore,applyMiddleware} from "redux";
 import {Provider} from "react-redux";
 import {composeWithDevTools} from 'redux-devtools-extension';
-import {Layout} from "antd"
+import {Layout} from "antd";
+import "hover.css"
 //imports saga
 import * as sagas from "../saga";
 //reducers

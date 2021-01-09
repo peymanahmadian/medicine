@@ -9,15 +9,14 @@ import {SubService,DoctorFind,SubServiceList,DoctorDetails} from "./../page";
 const Context=()=>{
     return(
         <Layout.Content className={"padding_vertical content"}>
-            <Switch>
-                <Route path={"/"} exact={true} component={Home} />
-                <Route path={"/service/reserve"} exact={true} component={DoctorDetails} />
-                <Route path={"/service/:id"} exact={true} component={SubService} />
-                <Route path={"/service/search/:id"} exact={true} component={DoctorFind} />
-                <Route path={"/service/sub/:id"} exact={true} component={SubServiceList} />
-
-                <Route component={Error}/>
-            </Switch>
+                    <Switch>
+                        <Route path={"/"} exact={true} component={Home} />
+                        <Route path={"/service/reserve"} exact={true} component={DoctorDetails} />
+                        <Route path={"/service/:id"} exact={true} component={SubService} />
+                        <Route path={"/service/search/:id"} exact={true} component={DoctorFind} />
+                        <Route path={"/service/sub/:id"} exact={true} component={SubServiceList} />
+                        <Route component={Error}/>
+                    </Switch>
         </Layout.Content>
     )
 }

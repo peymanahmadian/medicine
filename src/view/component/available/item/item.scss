@@ -4,12 +4,19 @@
   margin: 4px;
   border: 1px solid $light_gray;
   background-color: white;
-  box-shadow: 0 0 2px #d5dce1;
+  box-shadow: 0 0 4px #57b3f6;
   border-radius: 4px;
+  cursor: pointer;
+  &:hover{
+    .infoItem .background{
+      border:6px solid $blue_base;
+    }
+  }
 
   .infoItem{
     display: flex;
     .background{
+      transition: all 0.2s ease-in;
       min-width: 110px;
       height: 110px;
       background-size: 100%;
@@ -19,7 +26,9 @@
     .basicInfo{
       padding: 2px 18px;
       .fullNameInfo{
-
+        font-size: 18px;
+        padding-bottom: 6px;
+        padding-top: 4px;
       }
       .titleInfo{
 
@@ -29,6 +38,7 @@
   .priceInfo{
     div{
       margin-top: 75px;
+      text-align: left;
     }
   }
 }

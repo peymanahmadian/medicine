@@ -1,4 +1,4 @@
-import {Col, Row, Button} from "antd";
+import {Col, Row} from "antd";
 import {useDispatch} from "react-redux";
 import {useHistory} from "react-router-dom";
 import "./item.scss";
@@ -12,7 +12,7 @@ const Item=(props)=>{
         history.push("/service/reserve");
     }
     return(
-        <div className={"item"}>
+        <div className={"item button "}>
             <Row justify={"center"}>
                 <Col xs={24} sm={24} md={16}>
                     <div className={"infoItem"}>
@@ -27,7 +27,8 @@ const Item=(props)=>{
                 </Col>
                 <Col xs={24} sm={24} md={8} className={"priceInfo"}>
                     <div>
-                        <Button type="primary" shape="round" size={"medium"} block onClick={()=>setInfo(model)}>دریافت مشاوره</Button>
+                        <button className="bttn-float bttn-sm bttn-primary" onClick={()=>setInfo(model)}>دریافت مشاوره</button>
+                        {/*<Button className={"bttn-unite bttn-md"} type="primary" shape="round" size={"medium"} block onClick={()=>setInfo(model)}>دریافت مشاوره</Button>*/}
                     </div>
 
 
