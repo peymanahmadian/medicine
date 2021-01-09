@@ -1,15 +1,19 @@
 import {useState} from "react";
 import {Col, Row, Menu, Layout, Input,Button} from "antd";
-import {SearchOutlined,CloseOutlined} from "@ant-design/icons";
+import {SearchOutlined} from "@ant-design/icons";
 import AccountImg from "../../assets/images/account.svg";
 //assets
 import LogoImg from "../../assets/images/logo.svg";
 import "../../assets/styles/header.scss";
+import Doctor from "../../assets/images/doctorLogo.svg"
 const Header=(props)=>{
     const [showMenu,setShowMenu]=useState(false);
     return(
         <Layout.Header className={"header"}>
             <Row className={"borderBottom"} justify="center">
+                <div className={"greenRect"} />
+                <div className={"greenCircle"}/>
+                <img className={"doctorImage"} src={Doctor} alt={"doctorLogo"}/>
                 <Col xs={16} lg={4}>
                     <img height={"64"} src={LogoImg} alt={"نرم افزار دارویی"} title={"نرم افزار دارویی"}/> <span className={"blueText"}>نرم افزار پزشکی</span>
                 </Col>
@@ -27,21 +31,18 @@ const Header=(props)=>{
                     </div>
                 </Col>
             </Row>
-            <Row justify="center" align={"middle"} className={`header_search ${showMenu && `show animate__animated animate__slideInUp animate__faster`}`}>
-                <Col xs={20} lg={14} className={"centerText"}>
-                    <div className={"title"}><b>نام نرم افزار</b> مشاوره آنلاین و تلفنی روانشناسی و پزشکی </div>
-                    <Input.Search
-                        placeholder="به دنبال چه خدماتی هستید؟"
-                        allowClear
-                        enterButton="جستجو"
-                        size="large"
-                        onSearch={()=>{}}
-                    />
-                    <Button danger onClick={()=>setShowMenu(false)} className={"icon_btn"} type="primary" shape="circle" icon={<CloseOutlined />} size={"large"}/>
+            <div className={`header_search ${showMenu && `show animate__animated animate__slideInUp animate__faster`}`}>
+                <div className={"search_box"}>
+                    <div className={"buttonSearch"}>
+                        <Input className={"text"} placeholder="به دنبال چه خدماتی هستید؟"/>
+                        <Button className={"button"} type="primary">جستجو</Button>
+                    </div>
+                    <Button danger onClick={()=>setShowMenu(false)} className={"close_btn"} type="primary"  size={"large"}>
+                        بستن
+                    </Button>
 
-
-                </Col>
-            </Row>
+                </div>
+            </div>
         </Layout.Header>
     )
 }

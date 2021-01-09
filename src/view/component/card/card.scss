@@ -1,41 +1,40 @@
 @import "../../../assets/styles/global";
 .card{
   display: block;
-  margin: 8px auto;
-  max-width: 190px;
+  margin:0 auto;
+  width: 190px;
   max-height: 240px;
-  padding: 0 4px;
-  @include xs(){
-    max-width: 95%;
-  }
-  @include sm(){
-    max-width: 95%;
+  padding: 0;
+  @include sm_down(){
+    width: 100%;
   }
   .item{
+    margin: 0 auto;
     background-color: white;
-    box-shadow: 0 0 2px #4e4e4e;
+    box-shadow: 0 0 2px #62b8e7;
     width: 100%;
     padding: 0;
-    border-radius: 4px;
+    border-radius: 8px;
     cursor: pointer;
-    @include xs(){
+    box-sizing: border-box;
+    margin: 0 0 20px;
+    position: relative;
+    overflow: hidden;
+    @include sm_down(){
       display: flex;
       max-width: 100%;
       border-radius: 0;
+      margin-bottom: 2px;
     }
-    @include sm(){
-      display: flex;
-      max-width: 100%;
-      margin:0;
-      border-radius: 0;
-    }
+
     &:hover{
-      box-shadow: 0 0 6px #4e4e4e;
+      .background {
+        background-size: 55%;
+      }
 
-    }
-    &:hover .background{
-      background-size: 65%;
-
+      .hover{
+        transform: translateY(2px);
+      }
     }
     .background{
       border-radius: 4px 4px 0 0;
@@ -43,7 +42,7 @@
       background-repeat: no-repeat;
       transition: all 0.2s ease-in;
       background-position: center;
-      background-size: 55%;
+      background-size: 45%;
       @include xs(){
         width: 50%;
         background-size:65%;
@@ -73,6 +72,27 @@
         font-weight: 600;
         padding-top: 64px;
       }
+    }
+    .circle{
+      height: 160px;
+      width: 160px;
+      background-color: rgba(17,136,167,.06);
+      position: absolute;
+      border-radius: 74px;
+      top: -35px;
+      right: -24px;
+    }
+    .hover{
+      @include sm_down(){
+        display: none;
+      }
+      transition: all 0.2s ease-in;
+      position: absolute;
+      width: 100%;
+      height: 60px;
+      background-color: rgba(17,136,167,.08);
+      transform: translateY(52px);
+      border-radius: 0 0 8px 8px;
     }
   }
 }

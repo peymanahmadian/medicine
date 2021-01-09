@@ -3,7 +3,7 @@ import {useDispatch} from "react-redux";
 import {toggleLoading} from "./../../../actions/visualAction";
 import VisualService from "../../../services/visualService";
 import {Service} from "../../../models/const";
-import {Col} from "antd";
+import {Col,Row} from "antd";
 import {Card} from "./../../component";
 const ServiceMenu=(props)=>{
     const[menuItem,setMenuItem]=useState([]);
@@ -64,25 +64,31 @@ const ServiceMenu=(props)=>{
                 break;
         }
     },[props.type,props.id,dispatch]);
-    if(props.type===Service.GetMasterServiceGroup){
-        return(
-            menuItem.map(item=><Col key={item.id} xs={24} sm={12} md={6} lg={6}>
-                <Card url={item.image}  link={{pathname:`service/${item.id}`}} as={item.name} title={item.name}/>
-            </Col>)
-        )
-    }else if(props.type===Service.GetMasterService){
-        return(
-            menuItem.map(item=><Col key={item.id} xs={24} sm={12} md={6} lg={6}>
+    return(
+        <Row justify={"center"}>
+            {
+                (props.type===Service.GetMasterServiceGroup)&&
+                menuItem.map(item=><Col key={item.id} xs={24} sm={12} md={6} lg={6}>
+                    <Card  url={item.image}  link={{pathname:`service/${item.id}`}} as={item.name} title={item.name}/>
+                </Col>)
+
+            }
+            {
+                (props.type===Service.GetMasterService)&&
+                menuItem.map(item=><Col key={item.id} xs={24} sm={12} md={6} lg={6}>
                 <Card url={item.image}  link={item.hasChild ? {pathname:`/service/sub/${item.id}`} : {pathname:`/service/search/${item.id}`}} as={item.name} title={item.name}/>
-            </Col>)
-        )
-    }else if(props.type===Service.GetMasterServiceItem){
-        return(
-            menuItem.map(item=><Col key={item.id} xs={24} sm={12} md={6} lg={6}>
-                <Card url={item.image}  link={{pathname:`/service/search/${item.id}`}} as={item.name} title={item.name}/>
-            </Col>)
-        )
-    }
+                </Col>)
+            }
+            {
+                (props.type===Service.GetMasterServiceItem)&&
+                menuItem.map(item=><Col key={item.id} xs={24} sm={12} md={6} lg={6}>
+                    <Card url={item.image}  link={{pathname:`/service/search/${item.id}`}} as={item.name} title={item.name}/>
+                </Col>)
+
+            }
+        </Row>
+    )
+
 
 
 

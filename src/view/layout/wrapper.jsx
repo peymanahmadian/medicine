@@ -3,9 +3,9 @@ import {useSelector} from "react-redux";
 import {Drawer, Menu} from "antd";
 import {Link} from "react-router-dom";
 import Header from "./header";
-import Content from "./content";
 import Footer from "./footer";
 import {Loading} from "./../component";
+import Content from "./content";
 const Wrapper=()=>{
     const loading=useSelector(state=>state.VisualReducer.loading);
     const [visible,setVisible]=useState(false);
@@ -28,6 +28,7 @@ const Wrapper=()=>{
 
 
             </Drawer>
+
             <Header onPress={()=>setVisible(true)}/>
             <Content/>
             <Footer/>
