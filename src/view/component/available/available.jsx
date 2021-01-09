@@ -9,8 +9,8 @@ const style={
     width: "100%",
     minHeight: "380px",
     marginTop: "4px",
-    boxShadow: "0 0 2px #acabab",
-    borderRadius: "2px"
+    boxShadow: "0 0 4px #57b3f6",
+    borderRadius: "4px"
 }
 const Available=(props)=>{
     const dispatch=useDispatch();

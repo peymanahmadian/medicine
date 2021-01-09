@@ -1,14 +1,17 @@
 @import "../fonts/fonts";
+@import "bttn.min";
 @import "animate";
+
 //var
 $normal_font:"shabnam-medium";
 $light_gray:#e6e6e6;
-$blue_base:#1890ff;
+$blue_base:#1188a7;
 $black:#524646;
-$header_height:305px;
+$header_height:405px;
 $header_height_mobile:64px;
-$footer_height:128px;
+$footer_height:200px;
 $white:white;
+$max_width:1024px;
 
 // Extra small devices (portrait phone.s, less than 576px)
 @mixin xs(){
@@ -22,9 +25,26 @@ $white:white;
     @content;
   }
 }
+@mixin sm_down(){
+  // Small devices (landscape phones, 576px and up)
+  @media (max-width: 767px) {
+    @content;
+  }
+}
 @mixin md(){
   // Medium devices (tablets, 768px and up)
   @media (min-width: 768px) and (max-width: 991px) {
+    @content;
+  }
+}
+@mixin md_down(){
+  // Medium devices (tablets, 768px and up)
+  @media (max-width: 991px) {
+    @content;
+  }
+}
+@mixin md_above(){
+  @media (min-width: 768px) {
     @content;
   }
 }
@@ -43,7 +63,7 @@ $white:white;
 //overload style ant
 
 .ant-layout-header{
-  background-color: $white;
+  background-color: #fafafa;
   min-height: $header_height;
   padding: 0;
   @include xs(){
@@ -71,6 +91,9 @@ $white:white;
   padding: 0;
 }
 //
+body .ant-layout{
+  background-color: #d4f2f9;
+}
 body *{
   font-family: $normal_font;
 }
@@ -108,11 +131,29 @@ body *{
 }
 .content{
   min-height:calc(100vh - (#{$header_height} + #{$footer_height}));
+  max-width: $max_width;
+  width: 100%;
+  margin: 0 auto;
+  @include sm_down(){
+    width: 100%;
+  }
 }
 .centerText{
   text-align: center;
 }
 .padding_vertical{
+  @include sm_down(){
+    padding-top:0 ;
+    padding-bottom: 0;
+  }
   padding-top: 12px;
   padding-bottom: 12px;
+}
+//button overide
+.bttn-float.bttn-primary{
+  border-radius: 22px;
+  background-color: #1188a7;
+  font-size: 14px;
+  color: white;
+  padding: 8px 18px;
 }

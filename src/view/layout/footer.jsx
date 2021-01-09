@@ -1,25 +1,21 @@
-import {Row, Col, Layout} from "antd";
+import {Layout} from "antd";
+import {PhoneTwoTone,MailTwoTone} from "@ant-design/icons";
 import "../../assets/styles/footer.scss";
-const Footer=(props)=>{
+import footerLogo from "../../assets/images/footerLogo.svg";
+const Footer=()=>{
     return(
         <Layout.Footer className={"footer"}>
-        <Row justify="center" >
-            <Col lg={{span:6,offset:1}} md={{span:6,offset:1}} xs={24} className={"part"}>
-                <div className={"title"}>پشتیبانی و راهنمایی</div>
-                <div>شماره تلفن تماس</div>
-                <div>ایمیل</div>
-            </Col>
-            <Col lg={{span:6,offset:1}} md={{span:6,offset:1}} xs={24} className={"part"}>
-                <div className={"title"}>پشتیبانی و راهنمایی</div>
-                <div>شماره تلفن تماس</div>
-                <div>ایمیل</div>
-            </Col>
-            <Col lg={{span:6,offset:1}} md={{span:6,offset:1}} xs={24} className={"part"}>
-                <div className={"title"}>پشتیبانی و راهنمایی</div>
-                <div>شماره تلفن تماس</div>
-                <div>ایمیل</div>
-            </Col>
-        </Row>
+            <div className={"innerFooter"}>
+                <div className={"part"}>
+                    <div>
+                        <div className={"partItem"}><div className={"iconBase"}><PhoneTwoTone/></div> <div className={"text"}>شماره تلفن تماس</div></div>
+                        <div className={"partItem"}><div className={"iconBase"}><MailTwoTone /></div> <div className={"text"}>رایانامه</div></div>
+                    </div>
+                    <div className={"img"}>
+                        <img src={footerLogo} height={75} alt={"اطلاعات وب سایت"}/>
+                    </div>
+                </div>
+            </div>
         </Layout.Footer>
     )
 }
