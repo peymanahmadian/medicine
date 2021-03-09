@@ -3,7 +3,7 @@ import {Switch,Route} from "react-router-dom";
 import Error from "../error/error";
 //import component
 import Home from "../home";
-import {SubService,DoctorFind,SubServiceList,DoctorDetails} from "./../page";
+import {SubService,DoctorFind,SubServiceList,DoctorDetails,Login} from "./../page";
 
 //
 const Context=()=>{
@@ -15,6 +15,7 @@ const Context=()=>{
                         <Route path={"/service/:id"} exact={true} component={SubService} />
                         <Route path={"/service/search/:id"} exact={true} component={DoctorFind} />
                         <Route path={"/service/sub/:id"} exact={true} component={SubServiceList} />
+                        <Route path={"/login"} exact={true} component={Login}/>
                         <Route component={Error}/>
                     </Switch>
         </Layout.Content>

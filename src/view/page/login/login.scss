@@ -1,0 +1,63 @@
+@import "../../../assets/styles/global";
+.loginContainer{
+  position: relative;
+  .mobileIcon{
+    position: absolute;
+    height: 110px;
+    left: 0;
+    top:-26px;
+  }
+  .rect{
+    background-color:$white;
+    border-radius: 4px;
+    box-shadow: 0 0 4px $blue_base;
+    padding: 20px 6px;
+    margin-top: 20px;
+    .registerBottom{
+      flex-direction: row-reverse;
+      display: flex;
+      margin: 0 auto;
+      width: 55%;
+      .caption{
+        font-size: 13px;
+        padding-top: 6px;
+      }
+      .ant-input-group-addon{
+        font-size: 18px;
+        border-radius: 25px 0 0 25px;
+        padding-top: 3px;
+      }
+      .endButton{
+        border-radius: 0 25px 25px 0;
+        width: 100%;
+      }
+      >div{
+        &:first-child{
+          line-height: 32px;
+          border-radius:0 ;
+        }
+        &:last-child{
+          min-width: 185px;
+        }
+        input{
+          direction: ltr;
+          font-size: 18px;
+          padding: 3px 6px;
+          &::placeholder{
+            direction: rtl;
+            text-align: right;
+            font-size: 14px;
+          }
+        }
+        button{
+          border:0;
+          border-radius: 0;
+          height: 100%;
+        }
+        font-size: 18px;
+        flex-grow: 1;
+        border-radius: 0;
+      }
+    }
+  }
+}

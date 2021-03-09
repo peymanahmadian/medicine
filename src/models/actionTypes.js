@@ -1,7 +1,9 @@
 export const UserActionType={
     Authentication:"Authentication",
     GetUser:"GetUser",
-    SetUser:"SetUser"
+    SetUser:"SetUser",
+    SetLogin:"SetLogin",
+    SendSMS:"SendSMS"
 }
 export const VisualActionType={
     toggleLoading:"toggleLoading"

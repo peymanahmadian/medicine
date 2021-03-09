@@ -18,5 +18,19 @@ class UserService{
             return e;
         }
     }
+    async sendSMS(param){
+        try{
+            return await axios.post(User.SendSMS,param,HttpHeader(true));
+        }catch (e) {
+            return e;
+        }
+    }
+    async evaluationSMS(param){
+        try{
+            return await axios.post(User.EvaluationSMS,param,HttpHeader(true));
+        }catch (e) {
+            return e;
+        }
+    }
 }
 export default new UserService();
