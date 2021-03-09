@@ -3,7 +3,7 @@ import LocalStorage from "../command/localStorage";
 //import Actions type
 import {UserActionType} from "./../models/actionTypes";
 //import Actions
-import {setUser} from "./../actions/userAction";
+import {setUser} from "../actions/account.action";
 //import Services
 import UserService from "../services/userService";
 //flow function
@@ -32,10 +32,23 @@ function* getUserFN(action){
     }
 
 }
+function* sendSMSFN(action){
+    const result=yield call(UserService.sendSMS,action.param);
+    if(!result.isAxiosError && result.status===200){
+        debugger;
+        //@todo call set user action
+        yield put(setUser(result.data))
+    }else{
+        //@todo handle login failed
+    }
+}
 //set action monitor
 export function* authentication() {
     yield takeEvery(UserActionType.Authentication,authenticationFN);
 }
 export function* getUser(){
     yield takeEvery(UserActionType.GetUser,getUserFN);
+}
+export function* sendSMS(){
+    yield takeEvery(UserActionType.SendSMS,sendSMSFN);
 }
